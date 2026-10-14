@@ -1,0 +1,28 @@
+# Installation
+
+The Skill and the runtime are two parts of one release: the Skill tells you how to work, and the runtime holds the CLI, the Bridge and the editor. They pair by version (`scripts/release.json`), and `cvslate` answers `RUNTIME_MISSING` until the runtime of this version is installed.
+
+Before installing, tell the user in a sentence or two what will happen: CVSlate <version> is downloaded from their npm registry (about 40 MB) into their user data directory, their system Node and PATH stay unchanged, and it usually takes under a minute. A request to install or use this Skill covers this download; if the user only wanted to look at the Skill, ask first. Then run:
+
+```sh
+node "<skill-dir>/scripts/install-runtime.mjs"
+```
+
+The installer runs on any Node 18+. It installs `@arilabo/cvslate@<version>` with the user's own npm configuration, so a user in mainland China whose npm uses npmmirror gets it from there; the package pins every dependency's integrity. It keeps using the Node that runs it (often the agent client's own) when that Node's SQLite is new enough, and only otherwise downloads a Node of its own and checks its hash. Running it again reports `alreadyInstalled`. When it finishes it runs `cvslate doctor` and includes the report as `doctor`.
+
+If npm cannot find this version, a registry mirror may not have caught up with a new release yet; retrying after a few minutes usually works. When the user provides `arilabo-cvslate-<version>.tgz` (a pre-release build), install that instead with `--package "<tgz path>"`; a package of another version is refused. If Node is missing, tell the user. If the installer fails, report its message; its checks protect the user's machine, so do not bypass them.
+
+Then run each of these as its own command. The workspace needs no setup: the first command that uses it creates it in the same data directory.
+
+1. Rendering uses an installed Chrome or Edge when there is one, so `cvslate setup` is needed only when doctor's `chromium` check fails. It downloads a headless Chromium (about 100 MB), from npmmirror when the user's npm registry is npmmirror and otherwise from Playwright's CDN, which can crawl for a long time from mainland China instead of failing; `PLAYWRIGHT_DOWNLOAD_HOST` set for that command overrides both, and the result's `downloadHost` shows when the mirror was used. Then run `cvslate doctor` again. Keep them separate: doctor exits 1 while no browser is found, so `doctor && setup` would never reach setup.
+2. Open the editor with `cvslate preview`, as in SKILL.md.
+
+## Updating
+
+doctor's `update` check asks the user's npm registry whether a newer CVSlate is out. If it is, tell the user once; updating is their choice, and the current version keeps working. To update:
+
+1. `cvslate stop`, so no Bridge of the old version keeps serving the editor.
+2. Install this Skill again from where it came (for example the GitHub repository AriLabo/CVSlate), replacing this Skill directory as a whole.
+3. The new Skill answers `RUNTIME_MISSING` for its own version; install that runtime as above.
+
+Resumes, settings and backups stay in the workspace and are untouched. The installer keeps the previous runtime version next to the new one.

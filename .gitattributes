@@ -1,0 +1,6 @@
+# Generated catalogs must compare identically on every runner.
+* text=auto eol=lf
+*.png binary
+*.woff binary
+*.woff2 binary
+*.ttf binary

@@ -1,0 +1,22 @@
+{
+  "id": "editorial",
+  "name": "编辑",
+  "description": "编辑式网格、编号栏目和对齐的元数据，克制中带设计感，适合产品、设计与技术岗位。",
+  "version": "1.0.0",
+  "engine": 1,
+  "skeleton": "single",
+  "author": "CVSlate",
+  "license": "MIT",
+  "tags": ["设计感", "编辑", "社招"],
+  "traits": { "photo": true, "atsFriendly": true },
+  "defaults": { "pageMarginMm": 15, "baseFontPt": 9.2, "lineHeight": 1.46, "sectionSpacingPt": 6.5, "photoEnabled": false },
+  "presets": [
+    { "id": "navy", "name": "藏蓝", "accentColor": "#274472", "fontFamily": "misans" },
+    { "id": "rust", "name": "赭红", "accentColor": "#9a3b2e", "fontFamily": "misans" },
+    { "id": "pine", "name": "松绿", "accentColor": "#2e6b4f", "fontFamily": "misans" }
+  ],
+  "settings": [
+    { "id": "numbers", "label": "栏目编号", "type": "toggle", "default": true },
+    { "id": "kicker", "label": "页眉角标", "type": "toggle", "default": true }
+  ]
+}

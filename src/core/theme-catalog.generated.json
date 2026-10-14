@@ -1,0 +1,217 @@
+[
+  {
+    "id": "standard",
+    "name": "标准",
+    "description": "稳妥的单栏正式简历，黑字为主、一个强调色，适合大多数岗位。",
+    "version": "1.0.0",
+    "engine": 1,
+    "skeleton": "single",
+    "author": "CVSlate",
+    "license": "MIT",
+    "tags": [
+      "简约",
+      "正式",
+      "社招",
+      "校招"
+    ],
+    "traits": {
+      "photo": true,
+      "atsFriendly": true
+    },
+    "defaults": {
+      "pageMarginMm": 15,
+      "baseFontPt": 9.8,
+      "lineHeight": 1.45,
+      "sectionSpacingPt": 8,
+      "photoEnabled": false
+    },
+    "presets": [
+      {
+        "id": "navy",
+        "name": "藏蓝",
+        "accentColor": "#274472"
+      },
+      {
+        "id": "ink",
+        "name": "墨黑",
+        "accentColor": "#1f2329"
+      },
+      {
+        "id": "teal",
+        "name": "黛青",
+        "accentColor": "#2f5d62"
+      }
+    ],
+    "settings": [
+      {
+        "id": "header",
+        "label": "页眉",
+        "type": "select",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "左对齐"
+          },
+          {
+            "value": "center",
+            "label": "居中"
+          }
+        ]
+      },
+      {
+        "id": "contacts",
+        "label": "联系方式",
+        "type": "select",
+        "default": "plain",
+        "options": [
+          {
+            "value": "plain",
+            "label": "纯文字"
+          },
+          {
+            "value": "icons",
+            "label": "带图标"
+          }
+        ]
+      },
+      {
+        "id": "rule",
+        "label": "栏目标题线",
+        "type": "select",
+        "default": "full",
+        "options": [
+          {
+            "value": "full",
+            "label": "通栏"
+          },
+          {
+            "value": "short",
+            "label": "短线"
+          },
+          {
+            "value": "none",
+            "label": "无"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "editorial",
+    "name": "编辑",
+    "description": "编辑式网格、编号栏目和对齐的元数据，克制中带设计感，适合产品、设计与技术岗位。",
+    "version": "1.0.0",
+    "engine": 1,
+    "skeleton": "single",
+    "author": "CVSlate",
+    "license": "MIT",
+    "tags": [
+      "设计感",
+      "编辑",
+      "社招"
+    ],
+    "traits": {
+      "photo": true,
+      "atsFriendly": true
+    },
+    "defaults": {
+      "pageMarginMm": 15,
+      "baseFontPt": 9.2,
+      "lineHeight": 1.46,
+      "sectionSpacingPt": 6.5,
+      "photoEnabled": false
+    },
+    "presets": [
+      {
+        "id": "navy",
+        "name": "藏蓝",
+        "accentColor": "#274472",
+        "fontFamily": "misans"
+      },
+      {
+        "id": "rust",
+        "name": "赭红",
+        "accentColor": "#9a3b2e",
+        "fontFamily": "misans"
+      },
+      {
+        "id": "pine",
+        "name": "松绿",
+        "accentColor": "#2e6b4f",
+        "fontFamily": "misans"
+      }
+    ],
+    "settings": [
+      {
+        "id": "numbers",
+        "label": "栏目编号",
+        "type": "toggle",
+        "default": true
+      },
+      {
+        "id": "kicker",
+        "label": "页眉角标",
+        "type": "toggle",
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": "minimal",
+    "name": "简约",
+    "description": "黑白为主、留白充足的单栏，层级只靠字号和字重，适合偏好朴素版面的人。",
+    "version": "1.0.0",
+    "engine": 1,
+    "skeleton": "single",
+    "author": "CVSlate",
+    "license": "MIT",
+    "tags": [
+      "简约",
+      "黑白",
+      "校招",
+      "社招"
+    ],
+    "traits": {
+      "photo": true,
+      "atsFriendly": true
+    },
+    "defaults": {
+      "pageMarginMm": 17,
+      "baseFontPt": 10,
+      "lineHeight": 1.5,
+      "sectionSpacingPt": 9,
+      "photoEnabled": false
+    },
+    "presets": [
+      {
+        "id": "ink",
+        "name": "墨黑",
+        "accentColor": "#222222"
+      },
+      {
+        "id": "navy",
+        "name": "藏蓝",
+        "accentColor": "#274472"
+      }
+    ],
+    "settings": [
+      {
+        "id": "photo",
+        "label": "照片",
+        "type": "select",
+        "default": "gray",
+        "options": [
+          {
+            "value": "gray",
+            "label": "黑白"
+          },
+          {
+            "value": "color",
+            "label": "彩色"
+          }
+        ]
+      }
+    ]
+  }
+]

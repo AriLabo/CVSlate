@@ -1,0 +1,79 @@
+{
+  "name": "@arilabo/cvslate",
+  "version": "0.1.0",
+  "description": "供 AI Agent 使用的本地简历编辑工具：Skill、CLI 和网页编辑器",
+  "author": "AriLabo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AriLabo/CVSlate.git"
+  },
+  "homepage": "https://github.com/AriLabo/CVSlate#readme",
+  "bugs": {
+    "url": "https://github.com/AriLabo/CVSlate/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && tsc -p tsconfig.node.json && vite build && node scripts/build-agent.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integration": "vitest run agent",
+    "test:e2e": "playwright test",
+    "snapshots:update": "node scripts/update-snapshots.mjs",
+    "cvslate": "node agent-dist/cli.mjs",
+    "mcp": "node agent-dist/mcp.mjs",
+    "themes:generate": "node scripts/theme-catalog.mjs",
+    "themes:check": "node scripts/theme-catalog.mjs --check",
+    "predev": "npm run themes:generate",
+    "prebuild": "npm run themes:check",
+    "pretest": "npm run themes:check"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  },
+  "devDependencies": {
+    "@fontsource/noto-sans-sc": "^5.3.0",
+    "@modelcontextprotocol/client": "2.2.0",
+    "@modelcontextprotocol/server": "2.2.0",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.20.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^6.1.1",
+    "ajv": "^8.20.0",
+    "esbuild": "^0.28.2",
+    "fake-indexeddb": "^6.2.5",
+    "fast-json-patch": "^3.1.1",
+    "lucide-react": "^0.468.0",
+    "misans": "^5.0.0",
+    "pdfjs-dist": "^6.3.289",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.0",
+    "zod": "4.3.6",
+    "zustand": "^5.0.11"
+  },
+  "engines": {
+    "node": ">=22.22.3"
+  },
+  "bin": {
+    "cvslate": "agent-dist/cli.mjs",
+    "cvslate-mcp": "agent-dist/mcp.mjs"
+  },
+  "files": [
+    "agent-dist/*.mjs",
+    "dist/**",
+    "schema/*.json",
+    "licenses/**",
+    "LICENSE",
+    "README.md",
+    "npm-shrinkwrap.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

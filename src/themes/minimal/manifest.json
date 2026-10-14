@@ -1,0 +1,20 @@
+{
+  "id": "minimal",
+  "name": "简约",
+  "description": "黑白为主、留白充足的单栏，层级只靠字号和字重，适合偏好朴素版面的人。",
+  "version": "1.0.0",
+  "engine": 1,
+  "skeleton": "single",
+  "author": "CVSlate",
+  "license": "MIT",
+  "tags": ["简约", "黑白", "校招", "社招"],
+  "traits": { "photo": true, "atsFriendly": true },
+  "defaults": { "pageMarginMm": 17, "baseFontPt": 10, "lineHeight": 1.5, "sectionSpacingPt": 9, "photoEnabled": false },
+  "presets": [
+    { "id": "ink", "name": "墨黑", "accentColor": "#222222" },
+    { "id": "navy", "name": "藏蓝", "accentColor": "#274472" }
+  ],
+  "settings": [
+    { "id": "photo", "label": "照片", "type": "select", "default": "gray", "options": [{ "value": "gray", "label": "黑白" }, { "value": "color", "label": "彩色" }] }
+  ]
+}

@@ -1,0 +1,43 @@
+# 依赖包和构建输出
+node_modules
+dist
+*.tsbuildinfo
+
+# 环境变量
+*.local
+
+# 编辑器
+.vscode
+.idea
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# npm
+.npm
+
+# 测试与 PDF QA 中间产物
+test-results
+playwright-report
+tmp
+
+# Agent workspace/runtime and generated exports
+agent-dist
+output
+.cvslate
+.env
+.env.*
+
+# Local SQLite state and backups
+*.db
+*.db-*
+*.bak
+workspace/
+
+# Generated private installation artifacts
+licenses/
+*.tgz
+npm-shrinkwrap.json
+
+schema/theme-catalog.json
